@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+Kitchen Dashboard
+</title>
+
+
+<link rel="stylesheet" href="/static/style.css">
+
+
+<link href=
+"https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+
+<h1>
+🍳 Kitchen Consumption Dashboard
+</h1>
+
+
+<p>
+Daily breakfast quantity planning system
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="card">
+
+
+<h2>
+📅 Select Date
+</h2>
+
+
+<input type="date" id="reportDate">
+
+
+<button onclick="getReport()">
+
+Generate Report
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+👩‍🎓 Individual Consumption
+</h2>
+
+
+
+<div id="studentReport">
+
+
+<p>
+Select date and generate report
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📊 Total Quantity Required
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Food Item
+</th>
+
+
+<th>
+Total Quantity
+</th>
+
+
+<th>
+Unit
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="totalReport">
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+function getReport()
+{
+
+
+let date =
+document.getElementById("reportDate").value;
+
+
+
+if(date==="")
+
+{
+
+alert(
+"Please select date"
+);
+
+return;
+
+}
+
+
+
+
+fetch(
+"/report/"+date
+)
+
+
+.then(
+response=>response.json()
+)
+
+
+.then(
+data=>{
+
+
+displayStudents(
+data.students
+);
+
+
+
+displayTotal(
+data.total
+);
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+function displayStudents(students)
+{
+
+
+let output="";
+
+
+
+if(students.length===0)
+
+{
+
+output=
+"<p>No feedback available</p>";
+
+}
+
+
+
+students.forEach(
+student=>{
+
+
+output += `
+
+<div class="student-card">
+
+
+<h3>
+👤 ${student.name}
+</h3>
+
+
+<p>
+📅 ${student.date}
+</p>
+
+
+<ul>
+
+`;
+
+
+
+student.items.forEach(
+item=>{
+
+
+output += `
+
+<li>
+
+${item.item}
+
+:
+
+<b>${item.quantity}</b>
+
+${item.unit}
+
+</li>
+
+`;
+
+
+});
+
+
+
+output +=`
+
+</ul>
+
+</div>
+
+`;
+
+
+
+});
+
+
+
+document.getElementById(
+"studentReport"
+).innerHTML=output;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function displayTotal(total)
+{
+
+
+let output="";
+
+
+
+for(let item in total)
+{
+
+
+output += `
+
+<tr>
+
+<td>
+${item}
+</td>
+
+
+<td>
+${total[item].quantity}
+</td>
+
+
+<td>
+${total[item].unit}
+</td>
+
+
+</tr>
+
+
+`;
+
+
+}
+
+
+
+document.getElementById(
+"totalReport"
+).innerHTML=output;
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

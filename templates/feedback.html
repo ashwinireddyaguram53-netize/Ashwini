@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Breakfast Feedback Portal</title>
+
+<link rel="stylesheet" 
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+🍽️ Breakfast Feedback
+</div>
+
+
+<div class="nav-links">
+
+<a>Home</a>
+<a>Feedback</a>
+<a>Dashboard</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+Daily Breakfast Feedback Portal
+</h1>
+
+
+<p>
+Your feedback helps the kitchen team prepare the right quantity every day.
+</p>
+
+
+</section>
+
+
+
+
+
+
+<div class="container">
+
+
+
+<!-- Student Details -->
+
+<div class="card">
+
+
+<h2>
+👤 Student Details
+</h2>
+
+
+<label>Date</label>
+
+<input type="date" id="date">
+
+
+
+<label>Name</label>
+
+<input type="text" 
+id="name"
+placeholder="Enter your name">
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Breakfast -->
+
+
+<div class="card">
+
+
+<h2>
+🍴 Today's Breakfast
+</h2>
+
+
+<p>Select the items you consumed</p>
+
+
+
+<div class="food-grid">
+
+
+
+<!-- Rice -->
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🍚 Rice
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+ladles
+</span>
+
+
+</div>
+
+
+
+
+
+
+<!-- Poha -->
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🥣 Poha
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+ladles
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Idly -->
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🍘 Idly
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+pieces
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Poori -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🥞 Poori
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+pieces
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Dosa -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🥞 Dosa
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+pieces
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Semiya Upma -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🍲 Semiya Upma
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+ladles
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Normal Upma -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🍲 Normal Upma
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+ladles
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Chutney -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🥥 Chutney
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+spoons
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Sprouts -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🌱 Sprouts
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+cups
+</span>
+
+
+
+<select>
+
+<option>
+Green Gram
+</option>
+
+<option>
+Green Gram + Microgreens
+</option>
+
+<option>
+Peanuts
+</option>
+
+<option>
+Green Gram + Peanuts
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Sai Sure -->
+
+
+<div class="food-card">
+
+<input type="checkbox">
+
+
+<span class="food-name">
+🥛 Sai Sure (Ragi Milk)
+</span>
+
+
+<input class="quantity"
+type="number"
+placeholder="Quantity">
+
+
+<span class="unit">
+glasses
+</span>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Feedback -->
+
+
+<div class="card">
+
+
+<h2>
+💬 Feedback
+</h2>
+
+
+<select id="rating">
+
+
+<option>
+Excellent
+</option>
+
+
+<option>
+Good
+</option>
+
+
+<option>
+Average
+</option>
+
+
+<option>
+Needs Improvement
+</option>
+
+
+</select>
+
+
+
+
+<textarea 
+id="suggestion"
+placeholder="Write your suggestions">
+
+</textarea>
+
+
+
+
+<button 
+class="submit-btn"
+onclick="submitFeedback()">
+
+
+Submit Feedback
+
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+
+</html>
