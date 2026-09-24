@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Breakfast Login</title>
+
+<link rel="stylesheet" 
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="card">
+
+
+<h1>
+🍽️ Breakfast Feedback Login
+</h1>
+
+
+<form action="/check_login" method="POST">
+
+
+<label>
+Select Your Class
+</label>
+
+
+<select name="class" required>
+
+
+<option value="">
+-- Select Class --
+</option>
+
+
+<option>
+1st PUC
+</option>
+
+
+<option>
+2nd PUC
+</option>
+
+
+<option>
+1st UG
+</option>
+
+
+<option>
+2nd UG
+</option>
+
+
+<option>
+3rd UG
+</option>
+
+
+<option>
+1st PG
+</option>
+
+
+<option>
+2nd PG
+</option>
+
+
+</select>
+
+
+<br><br>
+
+
+<label>
+Password
+</label>
+
+
+<input 
+type="password"
+name="password"
+placeholder="Enter password"
+required>
+
+
+<br><br>
+
+
+<button class="submit-btn">
+
+Login
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>
