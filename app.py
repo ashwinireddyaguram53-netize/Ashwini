@@ -45,7 +45,9 @@ feedback_collection = database["feedback"]
 def home():
     return render_template("feedback.html")
 
-
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
 
 
 
