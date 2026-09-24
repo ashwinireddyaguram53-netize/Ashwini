@@ -42,7 +42,7 @@ return;
 
 let items=[];
 
-
+let valid = true;
 
 let cards=document.querySelectorAll(".food-card");
 
@@ -68,14 +68,7 @@ let quantity=
 card.querySelector(".quantity").value;
 
 
-
-let unit=
-card.querySelector(".unit").innerText;
-
-
-
 if(quantity==""){
-
 
 alert(
 "Enter quantity for "+food
@@ -83,8 +76,28 @@ alert(
 
 return;
 
+}
+
+
+if(Number(quantity)<0){
+
+alert(
+"Quantity cannot be negative for "+food
+);
+
+valid = false;
+
+return;
 
 }
+
+
+
+let unit=
+card.querySelector(".unit").innerText;
+
+
+
 
 
 
@@ -107,7 +120,11 @@ unit:unit
 });
 
 
+if(!valid){
 
+    return;
+
+}
 
 
 
