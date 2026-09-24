@@ -10,7 +10,25 @@ import os
 # -----------------------------
 
 app = Flask(__name__)
+class_credentials = {
 
+
+    "1st PUC":"Puc@2026",
+
+    "2nd PUC":"Puc2@2026",
+
+    "1st UG":"UGone@2026",
+
+    "2nd UG":"UGtwo@2026",
+
+    "3rd UG":"UGthree@2026",
+
+    "1st PG":"PGone@2026",
+
+    "2nd PG":"PGtwo@2026"
+
+
+}
 CORS(app)
 
 
@@ -43,13 +61,41 @@ feedback_collection = database["feedback"]
 
 @app.route("/")
 def home():
-    return render_template("feedback.html")
+
+    return render_template("login.html")
 
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
 
+# -----------------------------
+# Check Login
+# -----------------------------
 
+@app.route("/check_login", methods=["POST"])
+def check_login():
+
+
+    class_name = request.form["class"]
+
+    password = request.form["password"]
+
+
+    if class_name in class_credentials and class_credentials[class_name] == password:
+
+
+        return render_template(
+            "feedback.html",
+            class_name=class_name
+        )
+
+
+    return """
+    <script>
+    alert('Invalid Class or Password');
+    window.location='/';
+    </script>
+    """
 
 
 # -----------------------------
