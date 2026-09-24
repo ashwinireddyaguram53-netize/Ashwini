@@ -205,6 +205,8 @@ box-shadow:0 10px 30px #ddc9aa;
 
 
 
+
+
 /* Container */
 
 
@@ -217,6 +219,8 @@ margin:auto;
 
 
 }
+
+
 
 
 
@@ -313,6 +317,8 @@ gap:15px;
 
 
 
+
+
 .food-card{
 
 
@@ -345,6 +351,8 @@ border-color:#8B5E3C;
 
 
 
+
+
 .quantity{
 
 
@@ -360,6 +368,7 @@ padding:8px!important;
 
 
 
+
 textarea{
 
 height:120px;
@@ -367,6 +376,8 @@ height:120px;
 resize:none;
 
 }
+
+
 
 
 
@@ -391,6 +402,80 @@ font-size:18px;
 
 
 }
+
+
+
+
+
+
+
+/* Thank You Page */
+
+
+.thank-you{
+
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:#FFF8E7;
+
+font-family:'Poppins',sans-serif;
+
+
+}
+
+
+
+.thank-you h1{
+
+
+font-size:45px;
+
+color:#5C3D2E;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.thank-you h2{
+
+
+color:#4A2C1B;
+
+font-size:25px;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.thank-you p{
+
+
+font-size:18px;
+
+color:#6b5548;
+
+
+}
+
+
+
 
 
 
