@@ -171,7 +171,37 @@ body:JSON.stringify(data)
 .then(result=>{
 
 
+if(result.status=="success"){
+
+
+document.body.innerHTML = `
+
+<div class="thank-you">
+
+<h1>🙏 Thank You!</h1>
+
+<h2>Your breakfast response has been submitted successfully.</h2>
+
+<p>
+Your feedback helps the kitchen department to plan the breakfast quantity.
+</p>
+
+</div>
+
+
+`;
+
+
+}
+
+
+else{
+
+
 alert(result.message);
+
+
+}
 
 
 })
